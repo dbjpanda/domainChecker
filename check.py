@@ -19,5 +19,9 @@ def check(domains, limit = 20):
     return results
 
 if __name__ == "__main__":
+    import csv
+    f = open('output','w')
+    writer = csv.writer(f)
     data = check(getwords(5),3)
-    import pdb;pdb.set_trace()
+    for result in data:
+        csv.writerow(result)
